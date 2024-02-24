@@ -1,0 +1,39 @@
+<form #form="ngForm" (submit)="onSubmit(form)" [class.submitted]="service.formSubmitted" novalidate autocomplete="off">
+    <input type="hidden" name="id" [value]="service.formData.id">
+    <div class="mb-3">
+      <label>Product Name</label>
+      <input class="form-control form-control-lg" placeholder="Product Name" #productName="ngModel" name="productName"
+        [(ngModel)]="service.formData.productName" required>
+    </div>
+    <div class="mb-3">
+      <label>Product Desription</label>
+      <input class="form-control form-control-lg" placeholder="Product Description" #description="ngModel"
+        name="description" [(ngModel)]="service.formData.productDescription" required>
+    </div>
+  
+    <div class="row">
+      <div class="mb-3 col-6">
+        <label>Price</label>
+        <input class="form-control form-control-lg" placeholder="price" #price="ngModel"
+          name="price" [(ngModel)]="service.formData.productPrice" required>
+      </div>
+      <div class="mb-3 col-6">
+        <label>Color</label>
+        <input class="form-control form-control-lg" placeholder="Color" #color="ngModel" name="color"
+          [(ngModel)]="service.formData.productColor" required>
+      </div>
+    </div>
+
+    <div class="mb-3">
+        <label>Category Name</label>
+        <input class="form-control form-control-lg" placeholder="Category Name" #description="ngModel"
+          name="categoryName" [(ngModel)]="service.formData.categoryName" required>
+      </div>
+
+    <div class="d-grid">
+      <button class="btn btn-lg btn-primary" type="submit">
+        Add Product
+      </button>
+    </div>
+  
+  </form>
